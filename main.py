@@ -1,5 +1,4 @@
-from src import spotify_api
-from src import server
+from src.server import server
 
 
 def run():

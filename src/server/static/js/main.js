@@ -1,19 +1,18 @@
 
-async function postData(url = '', data = {}) {
+async function getData(url = '') {
     const response = await fetch(url, {
-      method: 'POST',
+      method: 'GET',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(data)
     });
     return response.json();
   }
 
 const appStart = () => {
-    const dauButton = document.querySelector('#authenticate')
-    dauButton.addEventListener('mousedown', (e) => {
-      postData('/authenticate').then((x) => console.log(x))
+    const authenticateButton = document.querySelector('#authenticate')
+    authenticateButton.addEventListener('mousedown', (e) => {
+      getData('/authenticate').then((x) => console.log(x))
     })
 }
 
